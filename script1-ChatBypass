@@ -1,0 +1,27 @@
+local metatable = getrawmetatable(game);
+setreadonly(metatable, false);
+
+local old = metatable.__namecall;
+metatable.__namecall = function(...)
+   local Arguments = {...};
+   if getnamecallmethod() == "FireServer" and Arguments[1].Name == "SayMessageRequest" then
+       local Chat = Arguments[2];
+       local Amount = 0;
+       local NewString = "";
+       for Index = 1, #Chat do
+           local Letter = string.sub(Chat, Index, Index);
+           Amount = Amount + 1;
+           NewString = NewString.. Letter;
+           if Amount == 2 then
+               Amount = 0;
+               NewString = NewString.. "\224\165\177";
+           end;
+       end;
+       NewString = NewString:gsub(" ", "   ");
+       Arguments[2] = NewString;
+       return old(unpack(Arguments));
+   else
+       return old(...);
+   end;
+end;
+setreadonly(metatable, true);
