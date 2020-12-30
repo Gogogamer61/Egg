@@ -1,0 +1,8 @@
+--// Redwood Gui Version 14.0
+
+_G.WALKSPEED = 100
+_G.JUMPPOWER = 100
+_G.GUICLICKID = "903267862"
+_G.TOGGLE = Enum.KeyCode.F
+_G.toolsonspawn = {""}
+loadstring(game:GetObjects('rbxassetid://5671578245')[1].Source)()
