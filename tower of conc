@@ -1,0 +1,3 @@
+local Event = game:GetService("ReplicatedStorage").MutatorEvents.SpeedyEvent
+local gayporn = -999999e+65
+Event:FireServer(gayporn)
