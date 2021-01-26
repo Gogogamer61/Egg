@@ -1,0 +1,19 @@
+shared.Visuals = { --// Configuration (Will load default settings if shared.Visuals doesn't exist.)
+    Enabled = true,
+    CrosshairEnabled = true,
+    Boxes = true,
+    Healthbar = true,
+    Tracers = true,
+    Info = true,
+    ShowAllyTeam = true,
+    UseTeamColor = true,
+    AllyColor = Color3.fromRGB(0, 255, 0),
+    EnemyColor = Color3.fromRGB(255, 0, 0),
+    Crosshair = {
+        Size = 5,
+        Thickness = 1.5,
+        Offset = 5
+    }
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/coastss/releases/main/universal_visuals.lua"))()
